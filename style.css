@@ -1,0 +1,221 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100vw;
+    margin: 0;
+    flex-direction: column;
+}
+
+header {
+    height: 40px;
+    padding-bottom: 10px;
+    background-color: #FAF9F6;
+}
+
+main {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    width: 100vw;
+}
+
+.library {
+    display: flex;
+    flex-direction: column;
+    background-color: #4E1D04;
+    padding-left: 100px;
+    flex: 1 1 0;
+}
+
+.row {
+    height: 315px;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+.books {
+    display: flex;
+    gap: 2px;
+}
+
+.spacer {
+    height: 283px;
+    width: 30px;
+}
+
+li {
+    margin: 20px 0;
+    list-style-type: none;
+}
+
+.book {
+    display: flex;
+    align-self: flex-end;
+    padding: 0;
+    margin-bottom: 8px;
+    font-weight: bolder;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: gold;
+}
+
+.large {
+    height: 275px;
+}
+
+.medium {
+    height: 250px;
+}
+
+.small {
+    height: 225px;
+}
+
+.bookspine {
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    background-color: #5892cb;
+    border: 4px solid #1c5185;
+}
+
+.bookspine div {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.full {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0px;
+    height: 100%;
+    margin: 0 0 8px 0;
+    padding: 0;
+    opacity: 0;
+    transition: all .5s;
+    background-color: #5892cb;
+}
+
+.book .open {
+    border: 4px solid #1c5185;
+    padding: 0 20px 0 25px;
+    opacity: 1;
+    width: 100%;
+}
+
+.full div {
+    padding-top: 12px;
+}
+.book .full .pages {
+    padding-top: 30px;
+    padding-bottom: 15px;
+}
+
+.delete {
+    padding-top: 6px;
+    align-self: flex-end;
+}
+
+.bookshelf div {
+    display: flex;
+    justify-content: space-between;
+    background-color: #B4856B;
+    height: 1rem;
+
+}
+
+.bookshelf .support div {
+    background-color: #4E1D04;
+    height: 1rem;
+    width: 2rem;
+}
+
+.bookshelf .support .leftborder {
+    border-radius: 0 100% 0 0;
+}
+
+.bookshelf .support .rightborder {
+    border-radius: 100% 0 0 0;
+}
+
+div .hidden {
+    display: none;
+}
+
+.sidebar {
+    justify-self: left;
+    padding: 0 50px 0 30px;
+    background-color: antiquewhite;
+}
+
+.bookconstructer{
+    display: flex;
+    justify-content: center;
+}
+
+.spine {
+    background-color: #5892cb;
+    margin-top: 100px;
+    height: 444px;
+    width: 20px;
+    border-radius: 5px 0 0 5px;
+}
+
+.darkspine {
+    background-color: #1c5185;
+    margin-top: 100px;
+    height: 444px;
+    width: 10px;
+}
+
+.newbook {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    background-color: #5892cb;
+    width: 282px;
+    height: 444px;
+    border-radius: 0 5px 5px 0;
+}
+
+.submit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding-top: 10px;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: gold;
+}
+
+.submit .toggle {
+    align-self: flex-end;
+}
+
+.nosubmit {
+    padding-top: 100px;
+    font-size: larger;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: gold;
+}
+
+.input[type="text"] {
+    background-color: #5892cb;
+}
+
+.addbook {
+    border: 2px solid gold; 
+    padding: 3px; 
+    border-radius:2px;
+}
+
+footer {
+    align-self: center;
+}
