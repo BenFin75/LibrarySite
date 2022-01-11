@@ -31,13 +31,14 @@ function addToLibrary(usersBook) {
     let authorLine = document.createElement('div');
     let pageCountLine = document.createElement('div');
     let readLine = document.createElement('div');
+    readLine.addEventListener('click', changeReadStatus);
     titleLine.textContent = usersBook.title;
     byLine.textContent = 'By';
     authorLine.textContent = usersBook.author;
     pageCountLine.textContent = `Pages: ${usersBook.pageCount}`;
     pageCountLine.classList.add('pages')
     if (usersBook.read){
-        readLine.textContent = 'read';
+        readLine.textContent = 'has been read';
     } else{
         readLine.textContent = 'not yet read';
     }
@@ -87,6 +88,20 @@ function removeBook (e) {
     })
 }
 
+function changeReadStatus(e) {
+    const libraryShelf = document.querySelector('.books');
+    let bookNumber = e.target.parentElement.parentElement;
+    let position = bookNumber.classList[0].substring(1);
+    let book = myLibrary[position];
+    if (book.read){
+        book.read = false;
+        e.target.textContent = 'not yet read';
+    } else {
+        book.read = true;
+        e.target.textContent = 'has been read';
+    }
+}
+
 function parseInput() {
     toggleAddHidden();
     let title;
@@ -117,7 +132,6 @@ function parseInput() {
     })
     const usersBook = new NewBook(title, author, pageCount, read)
     myLibrary.push(usersBook)
-    console.log(myLibrary)
     addToLibrary(usersBook)
 }
 
